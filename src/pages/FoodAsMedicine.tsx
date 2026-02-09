@@ -8,18 +8,24 @@ import abstractBg from '../assets/course-abstract.png';
 import module01Img from '../assets/module-01-food-confidence.png';
 import module02Img from '../assets/module-02-blood-decode.png';
 import module03Img from '../assets/module-03-wellness-stress.png';
+import module04Img from '../assets/module-04-metabolic-repair.png';
+import module05Img from '../assets/module-05-gut-reset.png';
+import module06Img from '../assets/module-06-immune-resilience.png';
+import module07Img from '../assets/module-07-healthy-mind.png';
+import module08Img from '../assets/module-08-hormone-sync.png';
+import module09Img from '../assets/module-09-fitness-fueling.png';
 
 // Module background images (index 0-8)
-const moduleImages: (string | null)[] = [
+const moduleImages: string[] = [
     module01Img,
     module02Img,
     module03Img,
-    null, // 04 - Metabolic Repair
-    null, // 05 - Gut Reset
-    null, // 06 - Immune Resilience
-    null, // 07 - The Healthy Mind
-    null, // 08 - Hormone Sync
-    null, // 09 - Fitness Fueling
+    module04Img,
+    module05Img,
+    module06Img,
+    module07Img,
+    module08Img,
+    module09Img,
 ];
 
 const FoodAsMedicine = () => {
@@ -140,25 +146,26 @@ const FoodAsMedicine = () => {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ delay: index * 0.05 }}
-                                className="group relative p-8 border border-stone-100 rounded-3xl hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 bg-stone-50/50 hover:bg-white transition-all duration-500 overflow-hidden"
+                                className="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 aspect-[4/3]"
                             >
-                                {moduleImages[index] && (
-                                    <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-                                        <img
-                                            src={moduleImages[index]!}
-                                            alt=""
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                )}
-                                <div className="relative z-10">
-                                    <div className="text-5xl font-heading text-stone-200 mb-4 group-hover:text-primary/20 transition-colors">
+                                {/* Background Image */}
+                                <img
+                                    src={moduleImages[index]}
+                                    alt=""
+                                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                                {/* Dark Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/70 group-hover:via-black/30 transition-all duration-500"></div>
+
+                                {/* Content */}
+                                <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                                    <div className="text-5xl font-heading text-white/30 mb-2 group-hover:text-primary/50 transition-colors">
                                         {module.number}
                                     </div>
-                                    <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-primary transition-colors">
+                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                                         {module.title}
                                     </h3>
-                                    <p className="text-stone-600 text-sm leading-relaxed">
+                                    <p className="text-white/80 text-sm leading-relaxed">
                                         {module.desc}
                                     </p>
                                 </div>
