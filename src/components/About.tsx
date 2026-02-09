@@ -17,11 +17,11 @@ const About = () => {
                         className="lg:w-1/2"
                     >
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-square max-w-md mx-auto">
-                            {/* Using another placeholder */}
-                            <div
-                                className="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700"
-                                style={{ backgroundImage: `url(${mayaPortrait})` }}
-                            ></div>
+                            <img
+                                src={mayaPortrait}
+                                alt="Maya Flynn"
+                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            />
                         </div>
                     </motion.div>
 

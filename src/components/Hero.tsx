@@ -61,10 +61,12 @@ const Hero = () => {
                      I'll use a placeholder from unsplash or just a styled div for now, 
                      but since I can't fetch external, I'll make a nice CSS composition 
                  */}
-                                <div
-                                    className="bg-slate-200 aspect-[3/2] flex items-center justify-center relative bg-cover bg-center"
-                                    style={{ backgroundImage: `url(${heroBg})` }}
-                                >
+                                <div className="relative aspect-[3/2]">
+                                    <img
+                                        src={heroBg}
+                                        alt="Healthy food"
+                                        className="w-full h-full object-cover"
+                                    />
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
                                 </div>
                             </div>
