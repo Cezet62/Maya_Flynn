@@ -4,7 +4,6 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, MapPin, Star } from 'lucide-react';
 import heroImage from '../assets/course-hero.png';
-import abstractBg from '../assets/course-abstract.png';
 import module01Img from '../assets/module-01-food-confidence.png';
 import module02Img from '../assets/module-02-blood-decode.png';
 import module03Img from '../assets/module-03-wellness-stress.png';
@@ -67,9 +66,6 @@ const FoodAsMedicine = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <span className="inline-block py-1 px-3 border border-amber-200/50 rounded-full text-xs tracking-widest uppercase mb-6 backdrop-blur-sm text-amber-200">
-                            {t('foodAsMedicine.hero.highlight')}
-                        </span>
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-light mb-8 leading-tight text-amber-300 drop-shadow-lg">
                             {t('foodAsMedicine.title')}
                         </h1>
@@ -92,10 +88,6 @@ const FoodAsMedicine = () => {
 
             {/* Introduction / Philosophy */}
             <section className="py-24 md:py-32 bg-stone-50 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
-                    <img src={abstractBg} alt="" className="w-full h-full object-cover mix-blend-multiply" />
-                </div>
-
                 <div className="container mx-auto px-6 max-w-5xl relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -183,7 +175,7 @@ const FoodAsMedicine = () => {
 
                 <div className="container mx-auto px-6 max-w-4xl relative z-10 text-center">
                     <div className="bg-stone-800/80 backdrop-blur-xl p-12 md:p-16 rounded-[3rem] border border-white/10 shadow-2xl">
-                        <h2 className="text-3xl md:text-4xl font-heading mb-8">{t('foodAsMedicine.pricing.title')}</h2>
+                        <h2 className="text-3xl md:text-4xl font-heading mb-8 text-amber-300">{t('foodAsMedicine.pricing.title')}</h2>
 
                         <div className="flex flex-col md:flex-row justify-center items-center gap-12 mb-12">
                             <div className="text-center">
