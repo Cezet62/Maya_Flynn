@@ -5,6 +5,22 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, MapPin, Star } from 'lucide-react';
 import heroImage from '../assets/course-hero.png';
 import abstractBg from '../assets/course-abstract.png';
+import module01Img from '../assets/module-01-food-confidence.png';
+import module02Img from '../assets/module-02-blood-decode.png';
+import module03Img from '../assets/module-03-wellness-stress.png';
+
+// Module background images (index 0-8)
+const moduleImages: (string | null)[] = [
+    module01Img,
+    module02Img,
+    module03Img,
+    null, // 04 - Metabolic Repair
+    null, // 05 - Gut Reset
+    null, // 06 - Immune Resilience
+    null, // 07 - The Healthy Mind
+    null, // 08 - Hormone Sync
+    null, // 09 - Fitness Fueling
+];
 
 const FoodAsMedicine = () => {
     const { t } = useTranslation();
@@ -124,17 +140,28 @@ const FoodAsMedicine = () => {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ delay: index * 0.05 }}
-                                className="group p-8 border border-stone-100 rounded-3xl hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 bg-stone-50/50 hover:bg-white transition-all duration-500"
+                                className="group relative p-8 border border-stone-100 rounded-3xl hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 bg-stone-50/50 hover:bg-white transition-all duration-500 overflow-hidden"
                             >
-                                <div className="text-5xl font-heading text-stone-200 mb-4 group-hover:text-primary/20 transition-colors">
-                                    {module.number}
+                                {moduleImages[index] && (
+                                    <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                                        <img
+                                            src={moduleImages[index]!}
+                                            alt=""
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                )}
+                                <div className="relative z-10">
+                                    <div className="text-5xl font-heading text-stone-200 mb-4 group-hover:text-primary/20 transition-colors">
+                                        {module.number}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-primary transition-colors">
+                                        {module.title}
+                                    </h3>
+                                    <p className="text-stone-600 text-sm leading-relaxed">
+                                        {module.desc}
+                                    </p>
                                 </div>
-                                <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-primary transition-colors">
-                                    {module.title}
-                                </h3>
-                                <p className="text-stone-600 text-sm leading-relaxed">
-                                    {module.desc}
-                                </p>
                             </motion.div>
                         ))}
                     </div>
