@@ -134,16 +134,17 @@ const FoodAsMedicine = () => {
                         {modules.map((module, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                initial={{ y: 20 }}
+                                whileInView={{ y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
-                                transition={{ delay: index * 0.05 }}
-                                className="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 aspect-[4/3]"
+                                transition={{ delay: index * 0.05, duration: 0.4 }}
+                                className="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 aspect-[4/3] bg-stone-300"
                             >
                                 {/* Background Image */}
                                 <img
                                     src={moduleImages[index]}
                                     alt=""
+                                    loading="lazy"
                                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
                                 {/* Dark Gradient Overlay */}
